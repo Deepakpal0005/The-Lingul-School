@@ -29,6 +29,8 @@ app.get("/", (req, res) => {
 	});
 });
 
-app.listen(4000,() => {
+const PORT = process.env.PORT
+
+app.listen(PORT || 4000,() => {
     console.log(`App is running at port 4000`);
 })
