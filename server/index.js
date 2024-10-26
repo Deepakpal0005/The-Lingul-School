@@ -2,6 +2,7 @@ const  express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
 // const connect = require("./connect")
+require("dotenv").config()
 const cors = require("cors")
 
 app.use(cors())
