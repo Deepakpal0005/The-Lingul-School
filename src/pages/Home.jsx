@@ -12,6 +12,8 @@ import { MdOutlineOnlinePrediction } from "react-icons/md";
 
 import { Toaster,toast } from "react-hot-toast";
 
+import '../styles/homeStyles.css'
+
 function Home()
 {
     const [optionBar,setOptionBar] = useState(true)
@@ -121,7 +123,7 @@ function Home()
       };
 
     return (
-        <div className="flex flex-col gap-10 w-full items-center">
+        <div className="home-main flex flex-col gap-10 w-full items-center">
             {/* navbar */}
             <div className=" w-screen z-20 bg-gray-100 fixed flex items-center p-4 justify-around">
                 {/* left */}
