@@ -541,7 +541,7 @@ function Home()
                             {/* name & email  */}
                             <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-evenly p-2 gap-0 w-full">
                                 {/* name */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
+                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] xs:items-center sm:items-center md:items-start lg:items-start">
                                     <div className="text-xl">
                                         Full Name
                                     </div>
@@ -551,7 +551,7 @@ function Home()
                                 </div>
 
                                 {/* email */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
+                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] xs:items-center sm:items-center md:items-start lg:items-start">
                                     <div className="text-xl">
                                         Email
                                     </div>
@@ -564,7 +564,7 @@ function Home()
                             {/* number & subject */}
                             <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-evenly p-2 gap-0 w-full">
                                 {/* number */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
+                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] xs:items-center sm:items-center md:items-start lg:items-start">
                                     <div className="text-xl">
                                         Phone Number
                                     </div>
@@ -574,7 +574,7 @@ function Home()
                                 </div>
 
                                 {/* sub */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
+                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] xs:items-center sm:items-center md:items-start lg:items-start">
                                     <div className="text-xl">
                                         Subject
                                     </div>
@@ -585,7 +585,7 @@ function Home()
                             </div>
 
                             {/* message */}
-                            <div className="flex flex-col gap-3 w-[65%]">
+                            <div className="flex flex-col gap-3 w-[65%] xs:items-center sm:items-center md:items-start lg:items-start">
                                 <div className="text-xl">
                                     Message
                                 </div>
