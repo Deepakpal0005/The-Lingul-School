@@ -76,7 +76,7 @@ function Home()
                           Message Sent
                         </p>
                         <p className="mt-1 text-sm text-gray-500">
-                          We will get back to you soon!
+                          We will get back to you soon.
                         </p>
                       </div>
                     </div>
@@ -94,10 +94,11 @@ function Home()
         }
         catch(e)
         {
-            console.log("Error in mail ctrl");
+            console.log("Error in mail ctrl"); 
         }
     
         // clear the form after submission
+        // clear the form
         setFormData({
           name: '',
           email: '',
