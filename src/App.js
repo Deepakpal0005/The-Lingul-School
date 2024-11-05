@@ -14,7 +14,7 @@ function App() {
       </Routes>
       
       <Toaster
-        position="top-center"
+        position="bottom-left"
         reverseOrder={true}/>
     </div>
   );
