@@ -44,7 +44,7 @@ function Home()
         {
             try
             {
-                const response = await axios.post(`https://bestcoder.onrender.com//sendMail`,{formData})
+                const response = await axios.post(`https://bestcoder.onrender.com/sendMail`,{formData})
                 // console.log("response : ",response.status);
             }
             catch(error)
