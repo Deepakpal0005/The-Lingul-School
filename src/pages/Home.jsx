@@ -16,6 +16,7 @@ function Home()
 {
     const [optionBar,setOptionBar] = useState(true)
     const [showOptions,setShowOptions] = useState(false)
+    const backendUrl = process.env.backend_url;
 
     const [formData, setFormData] = useState({
         name: '',
@@ -43,7 +44,7 @@ function Home()
         {
             try
             {
-                const response = await axios.post('http://localhost:4000/sendMail',{formData})
+                const response = await axios.post(`${backendUrl}/sendMail`,{formData})
                 // console.log("response : ",response.status);
             }
             catch(error)
