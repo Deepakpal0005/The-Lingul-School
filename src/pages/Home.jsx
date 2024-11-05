@@ -16,7 +16,7 @@ function Home()
 {
     const [optionBar,setOptionBar] = useState(true)
     const [showOptions,setShowOptions] = useState(false)
-    const backendUrl = process.env.backend_url;
+    const backendUrl = process.env.BACKEND_URL;
 
     const [formData, setFormData] = useState({
         name: '',
