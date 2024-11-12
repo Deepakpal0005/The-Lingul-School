@@ -3,10 +3,12 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 // import { ToastContainer, toast } from 'react-toastify';
+import usePageTracking from './usePageTracking';
 import { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+  usePageTracking();
   return (
     <div className="w-screen m-0 p-0 overflow-x-hidden">
       <Routes>
