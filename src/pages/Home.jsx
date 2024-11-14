@@ -10,7 +10,10 @@ import { TbDeviceImacCode } from "react-icons/tb";
 import { MdOutlineAppShortcut } from "react-icons/md";
 import { MdOutlineOnlinePrediction } from "react-icons/md";
 
+
 import { Toaster,toast } from "react-hot-toast";
+
+import Details from "../components/Details";
 
 import '../styles/homeStyles.css'
 
@@ -125,6 +128,8 @@ function Home()
 
     return (
         <div className="home-main flex flex-col gap-10 w-full items-center">
+            {/* <div><Details/></div> */}
+
             {/* navbar */}
             <div className=" w-screen z-20 bg-gray-100 fixed flex items-center p-4 justify-around">
                 {/* left */}
@@ -517,8 +522,10 @@ function Home()
                                 </div>
 
                                 {/* value */}
-                                <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
-                                    +91 8595031668
+                                <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl hover:cursor-pointer hover:text-blue-500">
+                                    <a href="tel:+1234567890" class="">
+                                        +91 8595031668
+                                    </a>
                                 </div>
                             </div>
                             {/* <div className="flex flex-col"> */}
@@ -611,6 +618,7 @@ function Home()
         </div>
     )
 }
+
 export default Home
 
 
