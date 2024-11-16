@@ -10,9 +10,8 @@ import { TbDeviceImacCode } from "react-icons/tb";
 import { MdOutlineAppShortcut } from "react-icons/md";
 import { MdOutlineOnlinePrediction } from "react-icons/md";
 
-import { Toaster,toast } from "react-hot-toast";
 
-import '../styles/homeStyles.css'
+import { Toaster,toast } from "react-hot-toast";
 
 function Home()
 {
@@ -77,7 +76,7 @@ function Home()
                           Message Sent
                         </p>
                         <p className="mt-1 text-sm text-gray-500">
-                          We will get back to you soon!
+                          We will get back to you soon.
                         </p>
                       </div>
                     </div>
@@ -95,10 +94,11 @@ function Home()
         }
         catch(e)
         {
-            console.log("Error in mail ctrl");
+            console.log("Error in mail ctrl"); 
         }
     
         // clear the form after submission
+        // clear the form
         setFormData({
           name: '',
           email: '',
@@ -124,7 +124,7 @@ function Home()
       };
 
     return (
-        <div className="home-body flex flex-col gap-10 w-full items-center">
+        <div className="flex flex-col gap-10 w-full items-center">
             {/* navbar */}
             <div className=" w-screen z-20 bg-gray-100 fixed flex items-center p-4 justify-around">
                 {/* left */}
@@ -517,8 +517,10 @@ function Home()
                                 </div>
 
                                 {/* value */}
-                                <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
-                                    +91 8595031668
+                                <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl hover:cursor-pointer hover:text-blue-500">
+                                    <a href="tel:+1234567890" class="">
+                                        +91 8595031668
+                                    </a>
                                 </div>
                             </div>
                             {/* <div className="flex flex-col"> */}
@@ -544,7 +546,7 @@ function Home()
                             {/* name & email  */}
                             <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-evenly p-2 gap-0 w-full">
                                 {/* name */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] xs:items-center sm:items-center md:items-start lg:items-start xl:items-start">
+                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
                                     <div className="text-xl">
                                         Full Name
                                     </div>
@@ -554,7 +556,7 @@ function Home()
                                 </div>
 
                                 {/* email */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] xs:items-center sm:items-center md:items-start lg:items-start xl:items-start">
+                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
                                     <div className="text-xl">
                                         Email
                                     </div>
@@ -567,7 +569,7 @@ function Home()
                             {/* number & subject */}
                             <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-evenly p-2 gap-0 w-full">
                                 {/* number */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] xs:items-center sm:items-center md:items-start lg:items-start xl:items-start">
+                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
                                     <div className="text-xl">
                                         Phone Number
                                     </div>
@@ -577,7 +579,7 @@ function Home()
                                 </div>
 
                                 {/* sub */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] xs:items-center sm:items-center md:items-start lg:items-start xl:items-start">
+                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
                                     <div className="text-xl">
                                         Subject
                                     </div>
@@ -588,7 +590,7 @@ function Home()
                             </div>
 
                             {/* message */}
-                            <div className="flex flex-col gap-3 w-[65%]">
+                            <div className="flex flex-col gap-3 w-[65%] xs:items-center sm:items-center md:items-start lg:items-start">
                                 <div className="text-xl">
                                     Message
                                 </div>
@@ -611,6 +613,7 @@ function Home()
         </div>
     )
 }
+
 export default Home
 
 
