@@ -24,10 +24,10 @@ function Details ()
                     <div className="xs:hidden sm:hidden md:block lg:block xl:block">
                         <IoMail/>
                     </div>
-                    <div className=" text-sm md:text-md lg:text-md xl:text-md ">
-                    <a href="mailto:example@example.com">
+                    <div className=" text-sm md:text-md lg:text-md xl:text-md">
+                    <a href="mailto:jscoder2023@gmail.com">
                         jscoder2023@gmail.com
-                        </a>
+                    </a>
                     </div>
                 </div>
                 {/* number */}
@@ -36,7 +36,7 @@ function Details ()
                         <FaPhoneAlt/>
                     </div>
                     <div className=" text-sm md:text-md lg:text-md xl:text-md "> 
-                        <a href="tel:+1234567890" class="">
+                        <a href="tel:+918595031668" class="">
                             +91 8595031668
                         </a>
                     </div>

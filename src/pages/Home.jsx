@@ -496,7 +496,10 @@ function Home()
 
                                 {/* value */}
                                 <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
-                                    jscoder2023@gmail.com
+                                    {/* jscoder2023@gmail.com */}
+                                    <a href="mailto:jscoder2023@gmail.com">
+                                        jscoder2023@gmail.com
+                                    </a>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -518,7 +521,7 @@ function Home()
 
                                 {/* value */}
                                 <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl hover:cursor-pointer hover:text-blue-500">
-                                    <a href="tel:+1234567890" class="">
+                                    <a href="tel:+918595031668" class="">
                                         +91 8595031668
                                     </a>
                                 </div>
