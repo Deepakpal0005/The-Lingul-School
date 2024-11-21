@@ -1,5 +1,6 @@
 import React, { useState,useRef } from "react";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom/dist";
 
 import { HiMiniWrenchScrewdriver } from "react-icons/hi2";
 import { IoMdTime } from "react-icons/io";
@@ -11,103 +12,13 @@ import { MdOutlineAppShortcut } from "react-icons/md";
 import { MdOutlineOnlinePrediction } from "react-icons/md";
 
 
-import { Toaster,toast } from "react-hot-toast";
-
 function Home()
 {
     const [optionBar,setOptionBar] = useState(true)
     const [showOptions,setShowOptions] = useState(false)
-    const backendUrl = process.env.BACKEND_URL;
+    const backendUrl = process.env.BACKEND_URL
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        number: '',
-        subject: '',
-        message: ''
-      });
-
-      const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value, // update the form field based on input name
-        });
-      };
-
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        // console.log('Form Data:', formData);
-
-        // call backend to send mail
-        try
-        {
-            try
-            {
-                const response = await axios.post(`https://bestcoder.onrender.com/sendMail`,{formData})
-                // console.log("response : ",response.status);
-            }
-            catch(error)
-            {
-                // console.log("Error");
-                // console.log(error.response.data.message);
-                toast.error(error.response.data.message)
-                return
-            }
-            // console.log("response : ",response.data);
-            toast.custom((t) => (
-                <div
-                  className={`${
-                    t.visible ? 'animate-enter' : 'animate-leave'
-                  } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-                >
-                  <div className="flex-1 w-0 p-4">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 pt-0.5">
-                        <img
-                          className="h-10 w-10 rounded-full"
-                          src="/utils/checked.png"
-                          alt="checked"
-                        />
-                      </div>
-                      <div className="ml-3 flex-1">
-                        <p className="text-sm font-medium animate-bounce text-gray-900">
-                          Message Sent
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500">
-                          We will get back to you soon.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex border-l border-gray-200">
-                    <button
-                      onClick={() => toast.dismiss(t.id)}
-                      className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              ))
-        }
-        catch(e)
-        {
-            console.log("Error in mail ctrl"); 
-        }
-    
-        // clear the form after submission
-        // clear the form
-        setFormData({
-          name: '',
-          email: '',
-          number: '',
-          subject: '',
-          message: ''
-        });
-        
-      };
+    const navigate = useNavigate()
 
     function optionsCtrl()
     {
@@ -121,7 +32,7 @@ function Home()
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         // setOptionBar(!optionBar)
-      };
+    };
 
     return (
         <div className="flex flex-col gap-10 w-full items-center">
@@ -143,7 +54,7 @@ function Home()
                     <div onClick={() => scrollToDiv('services-section')} className="hover:text-blue-500 hover:cursor-pointer ">
                         Services
                     </div>
-                    <div onClick={() => scrollToDiv('contact-section')} className="hover:text-blue-500 hover:cursor-pointer ">
+                    <div onClick={() => navigate('/contact')} className="hover:text-blue-500 hover:cursor-pointer ">
                         Contact
                     </div>
                 </div>
@@ -166,7 +77,7 @@ function Home()
             {/* options */}
             {
                 showOptions ? 
-                    <div className="w-[90%] h-[250px] p-5 flex flex-col gap-5 justify-center absolute z-10 top-[15%] bg-slate-700 text-lg text-white">
+                    <div className="w-[90%] h-[250px] pl-5 flex flex-col gap-5 justify-center absolute z-10 top-[15%] bg-slate-700 text-lg text-white">
                         <div onClick={() => scrollToDiv('home-section')} className="hover:cursor-pointer">
                             Home
                         </div>
@@ -176,7 +87,7 @@ function Home()
                         <div onClick={() => scrollToDiv('services-section')} className="hover:cursor-pointer">
                             Services
                         </div>
-                        <div onClick={() => scrollToDiv('contact-section')} className="hover:cursor-pointer">
+                        <div onClick={() => navigate('/contact')} className="hover:cursor-pointer">
                             Contact
                         </div>
                 </div> : <div></div>
@@ -461,158 +372,7 @@ function Home()
                 </div>
             </div>
 
-            {/* contact */}
-            <div id="contact-section" className="contact-section w-full bg-slate-100 flex justify-center items-center pb-10">
-                <div className="w-[80%] flex flex-col gap-5 justify-center items-center mt-6">
-                    {/* upper */}
-                    <div className="w-full">
-                        <div className="xs:hidden sm:hidden md:absolute lg:absolute xl:absolute">
-                            <img src="/utils/yellow-semicircle.svg"/>
-                        </div>
-                        <div className="w-fill flex flex-col gap-6 items-center">
-                            <div className="xs:text-2xl sm:text-2xl md:text-5xl lg:text-5xl xl:text-5xl  font-semibold">
-                                Let's Stay Connected
-                            </div>
-                            <div className="text-lg text-slate-400 text-center">
-                                If you have any query or just want to know anything about us, feel free to contact.
-                            </div>
-                        </div>
-                    </div>
 
-                    {/* wave */}
-                    <div className="w-[90%] flex justify-end">
-                        <img src="/utils/red-wave.svg" alt="wave" className="rotate-90 scale-125"/>
-                    </div>
-
-                    {/* lower */}
-                    <div className="flex xs:flex-col-reverse sm:flex-col-reverse md:flex-row lg:flex-row xl:flex-row xs:gap-5 sm:gap-5 md:gap-0 lg:gap-0 xl:gap-0 w-full ">
-                        {/* details */}
-                        <div className="xs:w-[100%] sm:w-[100%] md:w-[35%] lg:w-[35%] xl:w-[35%] flex flex-col gap-6 bg-white xs:pl-8 sm:pl-8 md:pl-16 lg:pl-16 xl:pl-16 xs:pr-3 sm:pr-3 md:pr-0 lg:pr-0 xl:pr-0 pt-10 pb-7">
-                            <div className="flex flex-col">
-                                {/* head */}
-                                <div className="text-2xl ">
-                                    Email Address
-                                </div>
-
-                                {/* value */}
-                                <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
-                                    {/* jscoder2023@gmail.com */}
-                                    <a href="mailto:jscoder2023@gmail.com">
-                                        jscoder2023@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="flex flex-col">
-                                {/* head */}
-                                <div className="text-2xl ">
-                                    Office Location
-                                </div>
-
-                                {/* value */}
-                                <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
-                                    A-70 Marium Nagar, Ghaziabad, 201003
-                                </div>
-                            </div>
-                            <div className="flex flex-col">
-                                {/* head */}
-                                <div className="text-2xl ">
-                                    Phone Number
-                                </div>
-
-                                {/* value */}
-                                <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl hover:cursor-pointer hover:text-blue-500">
-                                    <a href="tel:+918595031668" class="">
-                                        +91 8595031668
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <div className="flex flex-col"> */}
-                                {/* head */}
-                                {/* <div className="text-2xl "> */}
-                                    {/* Skype Email */}
-                                {/* </div> */}
-
-                                {/* value */}
-                                {/* <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl"> */}
-                                    {/* youremail@gmail.com */}
-                                {/* </div> */}
-                            {/* </div> */}
-                        </div>
-
-                        {/* ball */}
-                        <div className="animate-pulse bg-transparent xs:w-[13%] sm:w-[13%] md:w-[3%] lg:w-[3%] xl:w-[3%]">
-                            <img className="animate-slow-spin" src="/utils/blue-semicircle.svg" alt="ring"/>
-                        </div>
-
-                        {/* form */}
-                        <div className="bg-white flex flex-col pt-8 pb-10 gap-8 items-center xs:w-[100%] sm:w-[100%] md:w-[62%] lg:w-[62%] xl:w-[62%]">
-                            {/* name & email  */}
-                            <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-evenly p-2 gap-0 w-full">
-                                {/* name */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
-                                    <div className="text-xl">
-                                        Full Name
-                                    </div>
-                                    <div>
-                                        <input onChange={handleInputChange} value={formData.name} name="name" className="h-12 text-center border-2 xs:w-52 sm:w-52 md:w-60 lg:w-60 xl:w-60 rounded-lg" type="text" placeholder="Enter your name."/>
-                                    </div>
-                                </div>
-
-                                {/* email */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
-                                    <div className="text-xl">
-                                        Email
-                                    </div>
-                                    <div>
-                                        <input onChange={handleInputChange} value={formData.email} name="email" className="h-12 border-2 text-center xs:w-52 sm:w-52 md:w-60 lg:w-60 xl:w-60 rounded-lg" type="email" placeholder="Example@gmail.com"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* number & subject */}
-                            <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-evenly p-2 gap-0 w-full">
-                                {/* number */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
-                                    <div className="text-xl">
-                                        Phone Number
-                                    </div>
-                                    <div>
-                                        <input onChange={handleInputChange} value={formData.number} name="number" className="h-12 border-2 text-center xs:w-52 sm:w-52 md:w-60 lg:w-60 xl:w-60 rounded-lg" type="text" placeholder="Enter your phone number"/>
-                                    </div>
-                                </div>
-
-                                {/* sub */}
-                                <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
-                                    <div className="text-xl">
-                                        Subject
-                                    </div>
-                                    <div>
-                                        <input onChange={handleInputChange} value={formData.subject} name="subject" className="h-12 border-2 text-center xs:w-52 sm:w-52 md:w-60 lg:w-60 xl:w-60 rounded-lg" type="email" placeholder="Type your Subject"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* message */}
-                            <div className="flex flex-col gap-3 w-[65%] xs:items-center sm:items-center md:items-start lg:items-start">
-                                <div className="text-xl">
-                                    Message
-                                </div>
-                                <div className="w-full">
-                                    <textarea onChange={handleInputChange} value={formData.message} name="message" className="w-full border-2 h-36 rounded-lg p-4 ">
-                                    </textarea>
-                                </div>
-                            </div>
-
-                            {/* button */}
-                            <div className="">
-                                <button onClick={handleSubmit} className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
-                                    Send Message
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }

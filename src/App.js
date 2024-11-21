@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+
 import Home from './pages/Home';
 import Main from '../src/pages/Main'
+import Contact from '../src/pages/Contact'
 
 // import { ToastContainer, toast } from 'react-toastify';
 import usePageTracking from './usePageTracking';
 import { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
+import ThankYou from './pages/ThankYou';
 
 function App() {
   usePageTracking();
@@ -15,10 +18,12 @@ function App() {
     <div className="w-screen m-0 p-0 overflow-x-hidden">
       <Routes>
         <Route path='/' element={<Main/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/thank-you' element={<ThankYou/>}/>
       </Routes>
       
       <Toaster
-        position="bottom-left"
+        position="top-center"
         reverseOrder={true}/>
     </div>
   );
