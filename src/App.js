@@ -7,6 +7,7 @@ import Main from '../src/pages/Main'
 import Contact from '../src/pages/Contact'
 
 // import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import usePageTracking from './usePageTracking';
 import { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
