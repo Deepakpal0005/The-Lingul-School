@@ -180,8 +180,8 @@ function Contact ()
                                 {/* value */}
                                 <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
                                     {/* jscoder2023@gmail.com */}
-                                    <a href="mailto:jscoder2023@gmail.com">
-                                        jscoder2023@gmail.com
+                                    <a href="mailto:Info@lingualeducation.com">
+                                        Info@lingualeducation.com
                                     </a>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@ function Contact ()
 
                                 {/* value */}
                                 <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
-                                    A-70 Marium Nagar, Ghaziabad, 201003
+                                    Greater Noida (West).
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -204,8 +204,8 @@ function Contact ()
 
                                 {/* value */}
                                 <div className="text-slate-400 xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl hover:cursor-pointer hover:text-blue-500">
-                                    <a href="tel:+918595031668" class="">
-                                        +91 8595031668
+                                    <a href="tel:+919540647081" class="">
+                                        +91 9540647081
                                     </a>
                                 </div>
                             </div>

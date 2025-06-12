@@ -8,7 +8,7 @@ function Details ()
 {
         //   function OpenWhatsAppButton() {
             const openWhatsApp = () => {
-                const phoneNumber = '+918595031668'; // Replace with your desired phone number
+                const phoneNumber = '+919540647081'; // Replace with your desired phone number
                 const message = encodeURIComponent('Hello!'); // Customize your message
                 const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
                 
@@ -25,8 +25,8 @@ function Details ()
                         <IoMail/>
                     </div>
                     <div className=" text-sm md:text-md lg:text-md xl:text-md">
-                    <a href="mailto:jscoder2023@gmail.com">
-                        jscoder2023@gmail.com
+                    <a href="mailto:info@lingualeducation.com">
+                        Info@lingualeducation.com
                     </a>
                     </div>
                 </div>
@@ -36,8 +36,8 @@ function Details ()
                         <FaPhoneAlt/>
                     </div>
                     <div className=" text-sm md:text-md lg:text-md xl:text-md "> 
-                        <a href="tel:+918595031668" class="">
-                            +91 8595031668
+                        <a href="tel:+919540647081" class="">
+                            +91 9540647081
                         </a>
                     </div>
                 </div>
