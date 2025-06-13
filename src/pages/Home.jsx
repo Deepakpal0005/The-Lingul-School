@@ -129,17 +129,19 @@ function Home() {
       {/* home section */}
       <div
         id="home-section"
-        className="home-section w-[90%] flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row xs:gap-6 sm:gap-6 bg-blue-50 h-auto xs:p-5 sm:p-5 md:p-8 lg:p-8 xl:p-8"
+        className="home-section  w-full max-w-screen flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row xs:gap-6 sm:gap-6 bg-blue-50 h-auto xs:p-5 sm:p-5 md:p-8 lg:p-8 xl:p-8 overflow-hidden"
       >
         {/* left */}
         <div className="xs:w-[100%] sm:w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] flex flex-col gap-5 items-center justify-center">
           <div className="text-blue-500 font-bold xs:text-lg sm:text-lg md:text-3xl lg:text-3xl xs:w-[100%] sm:w-[100%] md:w-[90%] lg:w-[90%] xl:w-[90%]">
             <ReactTyped
-              strings={["Willkommen bei The Lingual.","Welcome To The Lingual."]}
+              strings={[
+                "Willkommen bei The Lingual.",
+                "Welcome To The Lingual.",
+              ]}
               typeSpeed={40}
               backSpeed={50}
               loop={true}
-            
             />
           </div>
           <div className="xs:text-2xl sm:text-2xl md:text-5xl lg:text-5xl font-bold xs:w-[100%] sm:w-[100%] md:w-[90%] lg:w-[90%] xl:w-[90%] ">
@@ -153,7 +155,11 @@ function Home() {
 
         {/* right */}
         <div className="xs:w-[100%] sm:w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] bg-[#f3f8fe]">
-          <img src="/utils/herosection.png" className="scale-105 w-full h-auto object-contain bg-transparent bg-[#f3f8fe]" alt="img" />
+          <img
+            src="/utils/herosection.png"
+            className="scale-105 w-full h-auto object-contain bg-transparent bg-[#f3f8fe]"
+            alt="img"
+          />
         </div>
       </div>
 
@@ -270,7 +276,10 @@ function Home() {
       </section>
 
       {/* why choose us */}
-      <div id="about-section" className="about-section w-[85%] h-auto flex">
+      <div
+        id="about-section"
+        className="about-section w-full max-w-[85%] h-auto flex-wrap"
+      >
         {/* left  */}
         <div className="w-[50%] hidden md:flex lg:flex xl:flex justify-around">
           {/* 2 images */}
@@ -310,20 +319,22 @@ function Home() {
             Why Choose Us
           </div>
           <div className="w-[80%] xs:text-3xl sm:text-3xl md:text-5xl lg:text-5xl xl:text-5xl font-semibold">
-            Your Gateway to Fluent German Starts Here 
+            Your Gateway to Fluent German Starts Here
           </div>
           <div className="w-[80%] text-slate-500">
-           Our experienced instructors use proven teaching methods, personalized guidance, and immersive practice to help you speak German confidently. Whether for academic, travel, or career goals — we're here to support your success.
+            Our experienced instructors use proven teaching methods,
+            personalized guidance, and immersive practice to help you speak
+            German confidently. Whether for academic, travel, or career goals —
+            we're here to support your success.
           </div>
-             {/* wave only for mobile view */}
-                        <div className="absolute md:hidden lg:hidden xl:hidden w-full">
-                            <div className="left-[80%] relative">
-                                <img src="/utils/red-wave.svg"/>
-                            </div>
-                        </div>
+          {/* wave only for mobile view */}
+          <div className="absolute md:hidden lg:hidden xl:hidden w-full">
+            <div className="flex justify-end relative">
+              {/* <img src="/utils/red-wave.svg" /> */}
+            </div>
+          </div>
         </div>
-        </div>
-
+      </div>
 
       {/* features */}
       <div className="flex flex-col gap-8 w-[85%] bg-slate-50">
@@ -341,7 +352,9 @@ function Home() {
             />
           </div>
           <div className="text-slate-400 xsLw-[90%] sm:w-[90%] md:w-[50%] lg:w-[50%] xl:w-[50%] text-center">
-             We focus on personalized German learning with expert guidance, engaging classes, and real-world communication practice — helping you master the language in a comfortable, interactive environment.
+            We focus on personalized German learning with expert guidance,
+            engaging classes, and real-world communication practice — helping
+            you master the language in a comfortable, interactive environment.
           </div>
         </div>
         {/* lower */}
@@ -360,9 +373,7 @@ function Home() {
               </div>
 
               {/* desc */}
-              <div className="text-slate-600">
-                content
-              </div>
+              <div className="text-slate-600">content</div>
             </div>
             <div className="flex flex-col p-10 xs:gap-2 sm:gap-2 md:gap-5 lg:gap-5 xl:gap-5 rounded-3xl hover:bg-slate-50 shadow-md hover:shadow-xl  transition-all">
               {/* icon */}
@@ -377,9 +388,7 @@ function Home() {
               </div>
 
               {/* desc */}
-              <div className="text-slate-600">
-                content
-              </div>
+              <div className="text-slate-600">content</div>
             </div>
             <div className="flex flex-col p-10 xs:gap-2 sm:gap-2 md:gap-5 lg:gap-5 xl:gap-5 rounded-3xl hover:bg-slate-50 shadow-md hover:shadow-xl transition-all">
               {/* icon */}
@@ -394,9 +403,7 @@ function Home() {
               </div>
 
               {/* desc */}
-              <div className="text-slate-600">
-                  content
-              </div>
+              <div className="text-slate-600">content</div>
             </div>
             <div className="flex flex-col p-10 xs:gap-2 sm:gap-2 md:gap-5 lg:gap-5 xl:gap-5 rounded-3xl hover:bg-slate-50 shadow-md hover:shadow-xl  transition-all">
               {/* icon */}
@@ -410,9 +417,7 @@ function Home() {
               </div>
 
               {/* desc */}
-              <div className="text-slate-600">
-                content
-              </div>
+              <div className="text-slate-600">content</div>
             </div>
             <div className="flex flex-col p-10 xs:gap-2 sm:gap-2 md:gap-5 lg:gap-5 xl:gap-5 rounded-3xl hover:bg-slate-50 shadow-md hover:shadow-xl  transition-all">
               {/* icon */}
@@ -427,9 +432,7 @@ function Home() {
               </div>
 
               {/* desc */}
-              <div className="text-slate-600">
-                content
-              </div>
+              <div className="text-slate-600">content</div>
             </div>
             <div className="flex flex-col p-10 xs:gap-2 sm:gap-2 md:gap-5 lg:gap-5 xl:gap-5 rounded-3xl hover:bg-slate-50 shadow-md hover:shadow-xl  transition-all">
               {/* icon */}
@@ -444,9 +447,7 @@ function Home() {
               </div>
 
               {/* desc */}
-              <div className="text-slate-600">
-                content
-              </div>
+              <div className="text-slate-600">content</div>
             </div>
           </div>
         </div>

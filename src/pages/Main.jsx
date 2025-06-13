@@ -6,11 +6,11 @@ import Home from "./Home";
 function  Main ()
 {
     return (
-        <div className="w-screen h-auto overflow-x-hidden overflow-y-auto">
-            <div className="fixed z-30">
+        <div className="w-full h-auto overflow-x-hidden overflow-y-auto">
+            <div className="fixed z-30 max-w-full">
                 <Details/>
             </div>
-            <div className="xs:mt-14 sm:mt-14 md:mt-5 lg:mt-5 xl:mt-5">
+            <div className="xs:mt-14 sm:mt-14 md:mt-5 lg:mt-5 xl:mt-5 max-w-full">
                 <Home/>
             </div>
 
