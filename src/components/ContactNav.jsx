@@ -6,7 +6,7 @@ function ContactNav()
 <div className=" w-screen z-20 bg-gray-100 fixed flex items-center p-4 justify-around">
                 {/* left */}
                 <div className="xs:w-[80%] sm:w-[80%] md:w-[40%] lg:w-[40%]">
-                    <img onClick={() => navigate('/')} src="/public/utils/logo3.jpg" alt="logo" className="xs:h-8 md:h-12 lg:h-12 hover:cursor-pointer" />
+                    <img onClick={() => navigate('/')} src="/utils/logo3.jpg" alt="logo" className="xs:h-8 md:h-12 lg:h-12 hover:cursor-pointer" />
                 </div>
 
                 {/* right */}

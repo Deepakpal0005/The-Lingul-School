@@ -16,7 +16,7 @@ import ThankYou from './pages/ThankYou';
 function App() {
   usePageTracking();
   return (
-    <div className="w-screen m-0 p-0 overflow-x-hidden">
+    <div className="w-screen m-0 p-0 overflow-x-hidden ">
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/contact' element={<Contact/>}/>
