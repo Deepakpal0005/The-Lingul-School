@@ -256,11 +256,10 @@ function Home() {
             />
           </div>
           <div className="xs:text-2xl sm:text-2xl md:text-5xl lg:text-5xl font-bold xs:w-[100%] sm:w-[100%] md:w-[90%] lg:w-[90%] xl:w-[90%] ">
-            Master the German Language with Confidence.
+            Unlock Fluency at The Lingual – <br /> Foreign Language School
           </div>
           <div className="xs:w-[100%] sm:w-[100%] md:w-[90%] lg:w-[90%] xl:w-[90%] text-slate-400 xs:text-lg sm:text-lg md:text-3xl lg:text-3xl">
-            Learn from expert tutors and immersive methods tailored to help you
-            speak German fluently and confidently.
+            Join <span className=" font-semibold">The Lingual</span> to master German, French, Spanish, and English with expert tutors, interactive lessons, and real-world communication practice — all tailored to your goals and pace.
           </div>
         </div>
 
