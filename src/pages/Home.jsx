@@ -4,11 +4,9 @@ import { useNavigate } from "react-router-dom/dist";
 import { FaWhatsapp } from "react-icons/fa";
 import Contact from "./Contact";
 
-import { HiMiniWrenchScrewdriver } from "react-icons/hi2";
-import { IoMdTime, IoMdTimer } from "react-icons/io";
+import { IoMdTime } from "react-icons/io";
 import {
   FaBarsStaggered,
-  FaBook,
   FaBookOpen,
   FaBriefcase,
   FaGlobe,
@@ -19,35 +17,16 @@ import { ReactTyped } from "react-typed";
 import { RiShieldCheckFill } from "react-icons/ri";
 import { MdGroups } from "react-icons/md";
 import { PiCertificateFill } from "react-icons/pi";
-import { FaGlobeAmericas, FaRocket } from "react-icons/fa";
-import { Toaster, toast } from "react-hot-toast";
+import { FaRocket } from "react-icons/fa";
+import { toast } from "react-hot-toast";
 
-import { PiBookOpenTextFill } from "react-icons/pi";
-import { MdOutlineTranslate } from "react-icons/md";
-import { HiOutlineGlobeAlt } from "react-icons/hi";
-import { HiLanguage } from "react-icons/hi2";
-
-import { TbStack2 } from "react-icons/tb";
-import { SiVolkswagen } from "react-icons/si";
 import {
-  FaBookReader,
-  FaGlobeEurope,
-  FaPenFancy,
   FaChalkboardTeacher,
-  FaCertificate,
   FaUniversity,
-  FaLanguage,
-  FaCogs,
   FaScroll,
   FaTheaterMasks,
-  FaUtensils,
-  FaMicrophoneAlt,
   FaGraduationCap,
 } from "react-icons/fa";
-
-import { TbDeviceImacCode } from "react-icons/tb";
-import { MdOutlineAppShortcut } from "react-icons/md";
-import { MdOutlineOnlinePrediction } from "react-icons/md";
 
 function Home() {
   const [optionBar, setOptionBar] = useState(true);
@@ -89,25 +68,24 @@ function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.name.trim == "") {
+    if (formData.name.trim === "") {
       toast.error("Name is required.");
       return;
     }
-    if (formData.email.trim == "") {
+    if (formData.email.trim === "") {
       toast.error("Email is required.");
       return;
     }
-    if (formData.number.trim == "") {
+    if (formData.number.trim === "") {
       toast.error("Number is required.");
       return;
     }
     try {
       try {
-        const response = await axios.post(
-          `https://bestcoder.onrender.com/sendMail`,
-          { formData }
-        );
-        // console.log("response : ",response.status);
+        const response = await axios.post(`http://localhost:3000/sendMail`, {
+          formData,
+        });
+        console.log("response : ", response.status);
       } catch (error) {
         // console.log("Error");
         // console.log(error.response.data.message);
@@ -132,21 +110,22 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col gap-10 w-full items-center">
+    <div className="flex  flex-col gap-10 w-full items-center border border-red-500">
       {/* navbar */}
-      <div className=" w-screen z-20 bg-gray-100 fixed flex items-center p-4 justify-around h-16">
+      <div className=" w-screen z-20 bg-gray-100 fixed top-5 flex items-center p-4 justify-around h-16">
         {/* left */}
-        <div className="xs:w-[80%] sm:w-[80%] md:w-[40%] lg:w-[40%]">
+        <div className="xs:w-[80%] sm:w-[80%] md:w-[40%] lg:w-[40%] flex items-center space-x-3">
           <img
             onClick={() => scrollToDiv("home-section")}
-            src="/utils/logo3.jpg"
-            alt=""
-            className="xs:h-8 md:h-12 lg:h-14 hover:cursor-pointer rounded-full"
+            src="/utils/NewLinguallogo.png"
+            alt="The Lingual"
+            className="xs:h-20 md:h-20 lg:h-24 hover:cursor-pointer  object-contain "
           />
+          <h1 className="xs:text-lg text-2xl  font-bold text-blue-500">THE LINGUAL</h1>
         </div>
 
         {/* right */}
-        <div className="md:w-[40%] lg:w-[40%] hidden md:flex lg:flex lg:justify-between md:justify-between text-2xl text-slate-400 ">
+        <div className="md:w-[40%] lg:w-[40%] hidden md:flex lg:flex lg:justify-between md:justify-between md:gap-3 text-2xl text-slate-400 ">
           <div
             onClick={() => scrollToDiv("home-section")}
             className="hover:text-blue-500 hover:cursor-pointer"
@@ -172,7 +151,7 @@ function Home() {
             Testimonials
           </div>
           <div
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/contacts")}
             className="hover:text-blue-500 hover:cursor-pointer "
           >
             Contact
@@ -180,7 +159,7 @@ function Home() {
         </div>
 
         {/* option bar */}
-        <div className="xs:w-[10%] sm:w-[10%] visible md:hidden lg:hidden xl:hidden">
+        <div className="xs:w-[10%] sm:w-[10%] visible md:hidden lg:hidden xl:hidden ">
           {optionBar ? (
             <FaBarsStaggered
               onClick={optionsCtrl}
@@ -227,7 +206,7 @@ function Home() {
             Testimonials
           </div>
           <div
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/contacts")}
             className="hover:cursor-pointer"
           >
             Contact
@@ -259,7 +238,10 @@ function Home() {
             Unlock Fluency at The Lingual – <br /> Foreign Language School
           </div>
           <div className="xs:w-[100%] sm:w-[100%] md:w-[90%] lg:w-[90%] xl:w-[90%] text-slate-400 xs:text-lg sm:text-lg md:text-3xl lg:text-3xl">
-            Join <span className=" font-semibold">The Lingual</span> to master German, French, Spanish, and English with expert tutors, interactive lessons, and real-world communication practice — all tailored to your goals and pace.
+            Join <span className=" font-semibold">The Lingual</span> to master
+            German, French, Spanish, and English with expert tutors, interactive
+            lessons, and real-world communication practice — all tailored to
+            your goals and pace.
           </div>
         </div>
 
@@ -308,7 +290,7 @@ function Home() {
             <div className="text-2xl font-bold">German</div>
 
             {/* para */}
-            <div className="text-slate-400 text-lg">
+            <div className="text-slate-400 ">
               From A1 to C2 levels, prepare for Goethe exams and master German
               grammar and conversation.
             </div>
@@ -327,7 +309,7 @@ function Home() {
             <div className="text-2xl font-bold">French</div>
 
             {/* para */}
-            <div className="text-slate-400 text-lg">
+            <div className="text-slate-400 ">
               Build a solid foundation in French with an emphasis on practical
               communication.
             </div>
@@ -345,7 +327,7 @@ function Home() {
             <div className="text-2xl font-bold">Spanish</div>
 
             {/* para */}
-            <div className="text-slate-400 text-lg">
+            <div className="text-slate-400 ">
               Learn Spanish for travel, business, or exams with our immersive
               courses.
             </div>
@@ -363,7 +345,7 @@ function Home() {
             <div className="text-2xl font-bold">English</div>
 
             {/* para */}
-            <div className="text-slate-400 text-lg">
+            <div className="text-slate-400 ">
               Boost your English for academic, professional, and personal
               success.
             </div>
@@ -680,96 +662,70 @@ function Home() {
           </div>
         </div>
 
-        <div className="bg-white flex flex-col pt-8 pb-10 gap-8 items-center xs:w-[100%] sm:w-[100%] md:w-[62%] lg:w-[62%] xl:w-[62%]">
-          {/* name & email  */}
-          <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-evenly p-2 gap-0 w-full">
-            {/* name */}
-            <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
-              <div className="text-xl">Full Name</div>
-              <div>
-                <input
-                  onChange={handleInputChange}
-                  value={formData.name}
-                  name="name"
-                  className="h-12 text-center border-2 xs:w-52 sm:w-52 md:w-60 lg:w-60 xl:w-60 rounded-lg"
-                  type="text"
-                  placeholder="Enter your name."
-                />
-              </div>
-            </div>
-
-            {/* email */}
-            <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
-              <div className="text-xl">Email</div>
-              <div>
-                <input
-                  onChange={handleInputChange}
-                  value={formData.email}
-                  name="email"
-                  className="h-12 border-2 text-center xs:w-52 sm:w-52 md:w-60 lg:w-60 xl:w-60 rounded-lg"
-                  type="email"
-                  placeholder="Example@gmail.com"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* number & subject */}
-          <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-evenly p-2 gap-0 w-full">
-            {/* number */}
-            <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
-              <div className="text-xl">Phone Number</div>
-              <div>
-                <input
-                  onChange={handleInputChange}
-                  value={formData.number}
-                  name="number"
-                  className="h-12 border-2 text-center xs:w-52 sm:w-52 md:w-60 lg:w-60 xl:w-60 rounded-lg"
-                  type="text"
-                  placeholder="Enter your phone number"
-                />
-              </div>
-            </div>
-
-            {/* sub */}
-            <div className="flex flex-col gap-3 xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
-              <div className="text-xl">Subject</div>
-              <div>
-                <input
-                  onChange={handleInputChange}
-                  value={formData.subject}
-                  name="subject"
-                  className="h-12 border-2 text-center xs:w-52 sm:w-52 md:w-60 lg:w-60 xl:w-60 rounded-lg"
-                  type="email"
-                  placeholder="Type your Subject"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* message */}
-          <div className="flex flex-col gap-3 w-[65%] xs:items-center sm:items-center md:items-start lg:items-start">
-            <div className="text-xl">Message</div>
-            <div className="w-full">
-              <textarea
-                onChange={handleInputChange}
-                value={formData.message}
-                name="message"
-                className="w-full border-2 h-36 rounded-lg p-4 "
-              ></textarea>
-            </div>
-          </div>
-
-          {/* button */}
-          <div className="">
-            <button
-              onClick={handleSubmit}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg"
+       <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              className="bg-white w-full md:w-[62%] p-8 rounded-xl shadow-lg flex flex-col gap-6"
             >
-              Send Message
-            </button>
-          </div>
-        </div>
+              <input
+                type="hidden"
+                name="access_key"
+                value="98eec810-3a80-4389-8d71-02a03ee64b8a"
+              />
+              <div className="flex flex-col md:flex-row gap-6">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  required
+                  className="border rounded-lg px-4 py-3 w-full"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  className="border rounded-lg px-4 py-3 w-full"
+                />
+              </div>
+              <div className="flex flex-col md:flex-row gap-6">
+                <input
+                  type="text"
+                  name="number"
+                  placeholder="Phone Number"
+                  required
+                  className="border rounded-lg px-4 py-3 w-full"
+                />
+                <select
+                  name="subject"
+                  required
+                  className="border rounded-lg px-4 py-3 w-full text-slate-500"
+                >
+                  <option value="" disabled selected>
+                    Select Course
+                  </option>
+                  <option value="German Language">German Language</option>
+                  <option value="French Language">French Language</option>
+                  <option value="Spanish Language">Spanish Language</option>
+                  <option value="English Language">English Language</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                className="border rounded-lg px-4 py-3"
+              ></textarea>
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="w-1/3 xs:w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
       </div>
 
       {/* Footer */}
@@ -793,7 +749,7 @@ function Home() {
           {/* Center Logo and Info */}
           <div className="flex flex-col items-center text-center gap-2">
             <img
-              src="/utils/logo3.jpg"
+              src="/utils/NewLinguallogo.png"
               alt="The Lingual Logo"
               className="h-24 md:h-32 lg:h-40 rounded-full"
             />
@@ -850,7 +806,7 @@ function Home() {
         {/* whatsapp Icon */}
 
         <a
-          href="https://wa.me/919999999999?text=Hello%2C%20I%20am%20interested%20in%20your%20language%20courses.%20Please%20share%20more%20details."
+          href="https://wa.me/919540647081?text=Hello%2C%20I%20am%20interested%20in%20your%20language%20courses.%20Please%20share%20more%20details."
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-5 right-5 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-300"

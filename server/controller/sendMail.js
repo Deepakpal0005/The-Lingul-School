@@ -7,21 +7,21 @@ exports.sendMail2 = async(req,res) => {
         const formData = req.body.formData
 
         // validate formData
-        if(formData.name.trim()=="")
+        if(formData.name.trim()==="")
         {
             return res.status(400).json({
                 success:false,
                 message:"Name is required!"
             })
         }
-        if(formData.email.trim()=="")
+        if(formData.email.trim()==="")
         {
             return res.status(400).json({
                 success:false,
                 message:"Email is required!"
             })
         }
-        if(formData.number.trim()=="")
+        if(formData.number.trim()==="")
         {
             return res.status(400).json({
                 success:false,
@@ -40,15 +40,15 @@ exports.sendMail2 = async(req,res) => {
 
         // Setup email data
         let mailOptions = {
-            from: `BestCoder ${process.env.MAIL_USER}`,      // Sender's email
+            from: `The Lingual ${process.env.MAIL_USER}`,      // Sender's email
             to:formData.email,                 // Receiver's email from request body
-            subject:"Hello from BestCoder !",  // Subject from request body
+            subject:"Hello from The Lingual !",  // Subject from request body
             text:"We got your message, out team will contact you soon!!!"              // Plain text body
                                                // HTML body
         };
 
         let mailOptions2 = {
-            from: `BestCoder ${process.env.MAIL_USER}`,
+            from: `The Lingual ${process.env.MAIL_USER}`,
             to: process.env.PERSONAL_MAIL,
             subject:`New contact established, ${formData.subject}`,
             text:`Hi, ${formData.name} has contacted to you through the bestcoder online form. Phone number : ${formData.number} , email : ${formData.email} , message from the client : ${formData.message}`

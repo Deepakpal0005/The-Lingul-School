@@ -12,6 +12,7 @@ import usePageTracking from './usePageTracking';
 import { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 import ThankYou from './pages/ThankYou';
+import Contacts from './pages/Contacts';
 
 function App() {
   usePageTracking();
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/thank-you' element={<ThankYou/>}/>
+        <Route path='/contacts' element={<Contacts/>}/>
       </Routes>
       
       <Toaster

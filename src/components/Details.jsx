@@ -15,9 +15,9 @@ function Details() {
   };
 
   return (
-    <div className="w-screen sticky flex items-center justify-center bg-blue-600 overflow-hidden">
+    <div className="w-screen fixed top-0 flex items-center justify-center bg-blue-500 overflow-hidden">
       {/* strip */}
-      <div className="w-[80%] flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-center xs:gap-0 sm:gap-0 md:gap-10 lg:gap-10 xl:gap-10 text-white">
+      <div className="w-[80%] flex sm:flex-row md:flex-row lg:flex-row xl:flex-row items-center justify-center xs:gap-6 sm:gap-0 md:gap-10 lg:gap-10 xl:gap-10 text-white">
         {/* email */}
         <div className="flex items-center  gap-3">
           <div className="xs:hidden sm:hidden md:block lg:block xl:block">
