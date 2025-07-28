@@ -121,7 +121,9 @@ function Home() {
             alt="The Lingual"
             className="xs:h-20 md:h-20 lg:h-24 hover:cursor-pointer  object-contain "
           />
-          <h1 className="xs:text-lg text-2xl  font-bold text-blue-500">THE LINGUAL</h1>
+          <h1 className="xs:text-lg lg:text-2xl  font-bold text-blue-500">
+            THE LINGUAL
+          </h1>
         </div>
 
         {/* right */}
@@ -662,70 +664,70 @@ function Home() {
           </div>
         </div>
 
-       <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-              className="bg-white w-full md:w-[62%] p-8 rounded-xl shadow-lg flex flex-col gap-6"
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          className="bg-white w-full md:w-[62%] p-8 rounded-xl shadow-lg flex flex-col gap-6"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="98eec810-3a80-4389-8d71-02a03ee64b8a"
+          />
+          <div className="flex flex-col md:flex-row gap-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              required
+              className="border rounded-lg px-4 py-3 w-full"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="border rounded-lg px-4 py-3 w-full"
+            />
+          </div>
+          <div className="flex flex-col md:flex-row gap-6">
+            <input
+              type="text"
+              name="number"
+              placeholder="Phone Number"
+              required
+              className="border rounded-lg px-4 py-3 w-full"
+            />
+            <select
+              name="subject"
+              required
+              className="border rounded-lg px-4 py-3 w-full text-slate-500"
             >
-              <input
-                type="hidden"
-                name="access_key"
-                value="98eec810-3a80-4389-8d71-02a03ee64b8a"
-              />
-              <div className="flex flex-col md:flex-row gap-6">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  required
-                  className="border rounded-lg px-4 py-3 w-full"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  required
-                  className="border rounded-lg px-4 py-3 w-full"
-                />
-              </div>
-              <div className="flex flex-col md:flex-row gap-6">
-                <input
-                  type="text"
-                  name="number"
-                  placeholder="Phone Number"
-                  required
-                  className="border rounded-lg px-4 py-3 w-full"
-                />
-                <select
-                  name="subject"
-                  required
-                  className="border rounded-lg px-4 py-3 w-full text-slate-500"
-                >
-                  <option value="" disabled selected>
-                    Select Course
-                  </option>
-                  <option value="German Language">German Language</option>
-                  <option value="French Language">French Language</option>
-                  <option value="Spanish Language">Spanish Language</option>
-                  <option value="English Language">English Language</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="Your Message"
-                className="border rounded-lg px-4 py-3"
-              ></textarea>
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="w-1/3 xs:w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
+              <option value="" disabled selected>
+                Select Course
+              </option>
+              <option value="German Language">German Language</option>
+              <option value="French Language">French Language</option>
+              <option value="Spanish Language">Spanish Language</option>
+              <option value="English Language">English Language</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            className="border rounded-lg px-4 py-3"
+          ></textarea>
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="lg:w-1/3 xs:w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
       </div>
 
       {/* Footer */}
