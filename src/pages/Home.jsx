@@ -132,31 +132,32 @@ function Home() {
             onClick={() => scrollToDiv("home-section")}
             className="hover:text-blue-500 hover:cursor-pointer"
           >
-            Home
+            <h1 className="xs:text-lg lg:text-2xl ">Home</h1>
           </div>
           <div
             onClick={() => scrollToDiv("about-section")}
             className="hover:text-blue-500 hover:cursor-pointer "
           >
-            About
+            <h1 className="xs:text-lg lg:text-2xl">About</h1>
           </div>
           <div
             onClick={() => scrollToDiv("courses-section")}
             className="hover:text-blue-500 hover:cursor-pointer "
           >
-            Courses
+            <h1 className="xs:text-lg lg:text-2xl">Courses</h1>
           </div>
           <div
             onClick={() => scrollToDiv("testimonials-section")}
             className="hover:text-blue-500 hover:cursor-pointer "
           >
-            Testimonials
+            <h1 className="xs:text-lg lg:text-2xl">Testimonials</h1>
           </div>
           <div
             onClick={() => navigate("/contacts")}
             className="hover:text-blue-500 hover:cursor-pointer "
           >
-            Contact
+            <h1 className="xs:text-lg lg:text-2xl">Contact</h1>
+            
           </div>
         </div>
 
@@ -767,24 +768,37 @@ function Home() {
           {/* Quick Links - Right */}
           <div className="flex flex-col gap-1 text-right md:items-end">
             <h3 className="text-lg font-semibold text-blue-600">Quick Links</h3>
-            <a href="#home" className="text-gray-600 hover:text-blue-600">
+
+            <div
+              onClick={() => scrollToDiv("home-section")}
+              className="text-gray-600 hover:text-blue-600"
+            >
               Home
-            </a>
-            <a href="#about" className="text-gray-600 hover:text-blue-600">
+            </div>
+            <div
+              onClick={() => scrollToDiv("about-section")}
+              className="text-gray-600 hover:text-blue-600"
+            >
               About
-            </a>
-            <a href="#courses" className="text-gray-600 hover:text-blue-600">
+            </div>
+            <div
+              onClick={() => scrollToDiv("about-section")}
+              className="text-gray-600 hover:text-blue-600"
+            >
               Courses
-            </a>
-            <a
-              href="#testimonials"
+            </div>
+            <div
+              onClick={() => scrollToDiv("about-section")}
               className="text-gray-600 hover:text-blue-600"
             >
               Testimonials
-            </a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600">
+            </div>
+            <div
+              onClick={() => navigate("/contacts")}
+              className="text-gray-600 hover:text-blue-600"
+            >
               Contact
-            </a>
+            </div>
           </div>
         </div>
 
