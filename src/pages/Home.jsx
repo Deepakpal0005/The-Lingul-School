@@ -2,7 +2,9 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom/dist";
 import { FaWhatsapp } from "react-icons/fa";
-import Contact from "./Contact";
+import Contact from "./Contacts";
+import { Helmet } from "react-helmet";
+
 
 import { IoMdTime } from "react-icons/io";
 import {
@@ -110,6 +112,21 @@ function Home() {
   };
 
   return (
+  <>
+     {/* for SEO */}
+     <Helmet>
+        <title>The Lingual - Foreign Language Classes in India</title>
+        <meta 
+          name="description" 
+          content="Join The Lingual to learn German, French, Spanish, and English with expert tutors. Flexible courses designed for beginners and professionals." 
+        />
+        <meta 
+          name="keywords" 
+          content="learn German, learn French, language school India, English classes, Spanish courses, foreign language school" 
+        />
+        <link rel="canonical" href="https://www.lingualeducation.com/" />
+      </Helmet>
+
     <div className="flex  flex-col gap-10 w-full items-center border border-red-500">
       {/* navbar */}
       <div className=" w-screen z-20 bg-gray-100 fixed top-5 flex items-center p-4 justify-around h-16">
@@ -831,6 +848,7 @@ function Home() {
         </a>
       </footer>
     </div>
+  </>
   );
 }
 

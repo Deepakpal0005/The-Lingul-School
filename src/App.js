@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 
 // import Home from './pages/Home';
 import Main from '../src/pages/Main'
-import Contact from '../src/pages/Contact'
+import Contact from '../src/pages/Contacts'
 
 // import { ToastContainer, toast } from 'react-toastify';
 // import { ToastContainer, toast } from 'react-toastify';
